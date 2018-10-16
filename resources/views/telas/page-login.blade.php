@@ -19,15 +19,16 @@
         <h1>Reposição Inteligente</h1>
       </div>
       <div class="login-box">
-        <form class="login-form" action="{{route('index2')}}">
+        <form class="login-form" action="{{route('autenticacao.logar')}}" method="post">
+          @CSRF
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>ENTRAR</h3>
           <div class="form-group">
             <label class="control-label">Matricula</label>
-            <input class="form-control" type="text" placeholder="Insira sua matrícula" autofocus>
+            <input class="form-control" type="text" placeholder="Insira sua matrícula" name='matricula' autofocus>
           </div>
           <div class="form-group">
             <label class="control-label">Senha</label>
-            <input class="form-control" type="password" placeholder="Senha">
+            <input class="form-control" type="password" placeholder="Senha" name='senha'>
           </div>
           <div class="form-group btn-container">
             <button class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>Enviar</button>

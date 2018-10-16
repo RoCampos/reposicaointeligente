@@ -3,19 +3,19 @@
 <div class="row">
   <div class="col-md-8 offset-md-2">
     <div class="tile">
-      <form>
+      <form action="{{route('reposicao.salvar')}}"  method="post">
+        {{csrf_field()}}
         <div>
           <h3 >Solicitar Reposição</h3>
         </div>
         <br>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Disciplina</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option value="portugues">Português</option>
-            <option value="mat">Matemática</option>
-            <option value="hist">História</option>
-            <option value="bdd">Banco de Dados</option>
-            <option value="prog_internet">Programação para internet</option>
+          <select class="form-control" id="exampleFormControlSelect1" name="disciplina">
+            <option value="34981">Programação para internet</option>
+            <option value="34987">Química</option>
+            <option value="34980">Engenharia de software</option>
+            <option value="34985">Fundamentos de sistemas operacionais</option>
           </select>
         </div>
           <div class="form-group">
@@ -29,7 +29,7 @@
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Motivo</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea name='justificativa' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           <label for="exampleFormControlTextarea1">Anexar documento comprovante</label>
           <div class="input-group mb-3">

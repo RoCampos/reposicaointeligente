@@ -82,72 +82,161 @@
       </div>-->
      
       <div class="row">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-md-10 offset-md-1">
           <div class="tile">
             <h3 class="tile-title">Solicitações recebidas</h3>
             <div>
-              <table class="table table-hover" data-link="row">
-                <thead>
-                  <tr>
-                    <th scope='col'>Aluno</th>
-                    <th scope='col'>Curso/Turma</th>
-                    <th scope="col">Disciplina</th>
-                    <!--<th scope="col">Professor</th>-->
-                    <th scope="col">Data</th>
-                    
-                  </tr>
-                </thead>
 
-                <tbody>
-                  
-                  <tr onclick="mostrarlinha()">
-                  <th scope="row">Pablo</th>
-                  <td scope='row'>Informática</td>
-                  <!--<td>Maria José</td>-->
-                  <td>Português</td>
-                  <td>12/08/2018</td>
-                  <br>
-                  </tr> 
-                  
+              <div id="accordion">
+                <div class="card bg-light>
+                  <div class="card-header" id="headingTwo" >
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Pablo Vespúcio
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <b>Curso/Turma:</b>                          
+                        </div>
 
-                  <tr style="display:none" id="linha_info" colspan="4">
-                    <td>
-                      Justificativa: Eu estava doente
-                    </td>
-                    <td>
-                      oioioioioi
-                    </td>
+                        <div class="col-md-6">
+                          <b>Disciplina:</b>                          
+                        </div> 
+                      </div>
 
-                  </tr>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <b>Anexo: </b>                       
+                        </div>
 
-                  <tr>
-                    <th scope="row">Eloísa</th>
-                    <td scope='row'>Informática</td>
-                    <td>Português</td>
-                    <!--<td>Joaildo Maia</td>-->
-                    <td>14/09/2018</td>
-                    
-                  </tr>
-                  <tr>
-                    <th scope="row">Tâmara</th>
-                    <td scope='row'>Informática</td>
-                    <td>Português</td>
-                    <!--<td>Joaildo Maia</td>-->
-                    <td>14/09/2018</td>
-                    
-                  </tr>
-                  <tr>
-                    <th scope="row">Mirele</th>
-                    <td scope='row'>Informática</td>
-                    <td>Português</td>
-                    <!--<td>Kelson Oliveira</td>-->
-                    <td>14/09/2018</td>
-                    
-                  </tr>
+                        <div class="col-md-6">
+                          <b>Data da solicitação:</b>                          
+                        </div> 
+                      </div>
 
-                </tbody>
-              </table>              
-              <!--<canvas class="embed-responsive-item" id="lineChartDemo"></canvas>-->
+                      <div class="row">
+                        <div class="col-md-6">
+                          <b>Justificativa:</b>
+                          <div class="col-md-6">
+                            KAJKJAJSDJDJDJHFHGGGGGGGGGGGGHFHHn
+                          </div>                      
+                        </div> 
+
+                        <div class="col-md-6">
+                          <button type="button" class="btn btn-outline-success pull-right" data-toggle="modal" data-target="#exampleModal"> Marcar reposição</button>
+                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel"> Marque a reposição</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                  <div class="modal-body">
+                                    Sala: <input type="string" name=""/>
+                                    <br>
+                                    Data: <input type="date" name=""/>
+                                    <br>
+                                    Horário: <input type="time" name="appt-time"
+                                    min="7:00" max="22:00" required/>
+                                    <br>
+
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary"> Enviar</button>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div id="accordion">
+                <div class="card bg-light>
+                  <div class="card-header" id="headingTwo" >
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapseTwo">
+                        Eloisa
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <b>Curso/Turma:</b>                          
+                        </div>
+
+                        <div class="col-md-6">
+                          <b>Disciplina:</b>                          
+                        </div> 
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6">
+                          <b>Anexo: </b>                       
+                        </div>
+
+                        <div class="col-md-6">
+                          <b>Data da solicitação:</b>                          
+                        </div> 
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6">
+                          <b>Justificativa:</b>
+                          <div class="col-md-6">
+                            Preguiça
+                          </div>                      
+                        </div> 
+
+                        <div class="col-md-6">
+                          <button type="button" class="btn btn-outline-success pull-right" data-toggle="modal" data-target="#exampleModal2"> Marcar reposição</button>
+                              <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel"> Marque a reposição</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                  <div class="modal-body">
+                                    Sala: <input type="string" name=""/>
+                                    <br>
+                                    Data: <input type="date" name=""/>
+                                    <br>
+                                    Horário: <input type="time" name="appt-time"
+                                    min="7:00" max="22:00" required/>
+                                    <br>
+
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary"> Enviar</button>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
             </div>
           </div>
         </div>
@@ -224,15 +313,9 @@
     </script>
 
     <script>
-    function mostrarlinha(){
-      var Linha = document.getElementById("linha_info");
-      Linha.colSpan = "4"; 
-       if (Linha.style.display == "none") {
-        Linha.style.display = "block";
-      } else {
-        Linha.style.display = "none";
-      }
-    }
+    $('#exampleModal').modal(options)
+    $('#exampleModal2').modal(options)
    </script>
+
   </body>
 </html>

@@ -24,6 +24,11 @@ Route::get('/index', function () {
 	return view('telas.index2');
 })->name('index2');
 
+Route::get('/index-prof', function () {
+	return view('telas.index_prof');
+})->name('index-prof');
+
+
 Route::get('/mural', function () {
 	return view('telas.mural');
 })->name('mural');
@@ -47,3 +52,23 @@ Route::get('/repo-pendentes', function () {
 Route::get('/repo-abertas', function () {
 	return view('telas.repo-abertas');
 })->name('repo-abertas');
+
+Route::get('/index-prof', function () {
+	return view('telas.index_prof');
+})->name('index-prof');
+
+Route::resource('reposicao', 'AlunoController',[ 
+	'names' => [
+		'index' => 'reposicao.inicio',
+		'store' => 'reposicao.salvar',
+
+	]
+]);
+// Route::resource('autenticacao', 'AutenticacaoController',[ 
+// 	'names' => [
+// 		'index' => 'autenticacao.logar',
+		
+// 	]
+// ]);
+
+Route::post('autenticacao', 'AutenticacaoController@index')->name('autenticacao.logar');
