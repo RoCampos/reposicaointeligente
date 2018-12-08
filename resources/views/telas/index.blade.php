@@ -63,8 +63,15 @@
     <aside class="app-sidebar">
       <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
         <div>
-          <p class="app-sidebar__user-name">Pablo Vespúcio</p>
-          <p class="app-sidebar__user-designation">20151104010339</p>
+          <p class="app-sidebar__user-name"><?php 
+                echo(Session::get('nome'));
+            
+          ?></p>
+          <p class="app-sidebar__user-designation">
+          <?php 
+                echo(Session::get('matricula'));
+            
+          ?></p>
         </div>
       </div>
       <ul class="app-menu">
@@ -72,7 +79,7 @@
         
         <li><a class="app-menu__item" href="{{route('mural')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Mural</span></a></li>
 
-        <li><a class="app-menu__item text-danger" href="{{route('page-login')}}"><i class="app-menu__icon fa fa-sign-out fa-lg"></i><span class="app-menu__label">Sair</span></a></li>
+        <li><a class="app-menu__item text-danger" href="{{route('sessao.detroy')}}"><i class="app-menu__icon fa fa-sign-out fa-lg"></i><span class="app-menu__label">Sair</span></a></li>
 
         <!--<li class="treeview">
           <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-list"></i><span class="app-menu__label">Reposições</span><i class="treeview-indicator fa fa-angle-right"></i></a>

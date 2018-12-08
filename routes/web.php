@@ -17,44 +17,104 @@ Route::get('/', function () {
 
 
 Route::get('/aluno', function () {
-return view('aluno.index');
+	if (Session::has('senha') and Session::has("matricula")){
+		return view('aluno.index');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 });
 
 Route::get('/index', function () {
-	return view('telas.index2');
+	if (Session::has('senha') and Session::has("matricula")){
+		return view('telas.index2');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 })->name('index2');
 
 Route::get('/index-prof', function () {
-	return view('telas.index_prof');
+	if (Session::has('senha') and Session::has("matricula")){
+		return view('telas.index_prof');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 })->name('index-prof');
 
 
 Route::get('/mural', function () {
-	return view('telas.mural');
+	if (Session::has('senha') and Session::has("matricula")){
+		return view('telas.mural');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 })->name('mural');
 
 Route::get('/login', function () {
-	return view('telas.page-login');
+	if (Session::has('senha') and Session::has("matricula")){
+		return view('telas.page-login');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 })->name('page-login');
 
 Route::get('/repo-feitas', function () {
-	return view('telas.repo-feitas');
+	if (Session::has('senha') and Session::has("matricula")){
+		return view('telas.repo-feitas');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 })->name('repo-feitas');
 
 Route::get('/repo-marcadas', function () {
-	return view('telas.repo-marcadas');
+	if (Session::has('senha') and Session::has("matricula")){
+		return view('telas.repo-marcadas');
+	}
+	else{
+		return view("telas.page-login");
+	}
+
 })->name('repo-marcadas');
 
 Route::get('/repo-pendentes', function () {
-	return view('telas.repo-pendentes');
+	if (Session::has('senha') and Session::has("matricula")){
+		return view('telas.repo-pendentes');
+	}
+	else{
+		return view("telas.page-login");
+	}
+
 })->name('repo-pendentes');
 
 Route::get('/repo-abertas', function () {
-	return view('telas.repo-abertas');
+	if (Session::has('senha') and Session::has("matricula")){
+		return view('telas.repo-abertas');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 })->name('repo-abertas');
 
 Route::get('/index-prof', function () {
-	return view('telas.index_prof');
+	if (Session::has('senha') and Session::has("matricula")){
+		return view('telas.index_prof');
+	}
+	else{
+		return view("telas.page-login");
+	}
+
 })->name('index-prof');
 
 Route::resource('reposicao', 'AlunoController',[ 
@@ -72,3 +132,5 @@ Route::resource('reposicao', 'AlunoController',[
 // ]);
 
 Route::post('autenticacao', 'AutenticacaoController@index')->name('autenticacao.logar');
+Route::get('sessao', 'sessaoController@index')->name('sessao.detroy');
+/*Route::post('aut', 'AutenticacaoController@destroy')->name('autenticacao.detroy');*/

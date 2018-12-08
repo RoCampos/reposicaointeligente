@@ -13,7 +13,7 @@ use DB;
 
 class AutenticacaoController extends Controller
 {
-	public function index(){
+	public function index(Request $request){
 		
 		$client_aluno = new Suap;
 		$autenticacao = new Autenticacao;
@@ -23,27 +23,44 @@ class AutenticacaoController extends Controller
 
 		/*$client_prof = new SUAP($matricula, $senha);
 		$token_professor = $client_prof->auth($matricula, $senha);*/
-		$token_aluno= $client_aluno->autenticar($matricula, $senha);
+		
+		$token_aluno = $client_aluno->autenticar($matricula, $senha);
+
 		if ($token_aluno){
-			return view('telas.index2');
+				//$request->session()->put('matricula', 'oi');
+				Session::put('senha', $senha);
+				Session::put('matricula', $matricula);
+				
+				
+				$meusDados = $client_aluno->getMeusDados();
+				Session::put('nome', $meusDados["nome_usual"]);
+				
+				
+			
+				return view('telas.index2');
+				
+			}
 
 			
-		}
+			
+
+			
+		
 		/*else if ($token_professor){
 			return view('telas.index-prof');
 			$_SESSION['matricula'] = $matricula;
 			$_SESSION['senha'] = $senha;
 		}*/
-		else{
-			return view('telas.page-login');
+		else {
 			
+			return view('telas.page-login');
 			
 		}
 	}
-	public function show(Request $request, $id)
-    {
-        $value = $request->session()->get('matricula');
+	/*public function destroy()    {
+        Session::flush();
+        return view('telas.page-login');
 
         //
-    }  
+    }*/
 }
