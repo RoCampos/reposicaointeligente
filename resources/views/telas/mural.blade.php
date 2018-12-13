@@ -14,26 +14,16 @@
                 <th scope="col">Ação</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Português</th>
-                <!--<td>Maria José</td>-->
-                <td>12/08/2018</td>
-                <td><a href="#" class="badge badge-primary">Detalhes</a></td>
-              </tr>
-              <tr>
-                <th scope="row">Matemática</th>
-                <!--<td>Joaildo Maia</td>-->
-                <td>14/09/2018</td>
-                <td><a href="#" class="badge badge-primary">Detalhes</a></td>
-              </tr>
-              <tr>
-                <th scope="row">História</th>
-                <!--<td>Kelson Oliveira</td>-->
-                <td>14/09/2018</td>
-                <td><a href="#" class="badge badge-primary">Detalhes</a></td>
-              </tr>
-            </tbody>
+            @foreach($mural_feitas as $mural)
+              <tbody>
+                <tr>
+                  <th scope="row">{{$mural->nome_dis}}</th>
+                  <td>{{$mural->nome_prof}}</td>
+                  <td>{{$mural->data}}</td>
+                  <td><a href="#" class="badge badge-info">Detalhes</a></td>
+                </tr>
+                </tbody>
+                @endforeach
           </table>              
           <!--<canvas class="embed-responsive-item" id="lineChartDemo"></canvas>-->
         </div>
@@ -49,31 +39,21 @@
             <thead>
               <tr>
                 <th scope="col">Disciplina</th>
-                <!--<th scope="col">Professor</th>-->
+                <th scope="col">Professor</th>
                 <th scope="col">Data</th>
                 <th scope="col">Ação</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Biologia</th>
-                <!--<td>Cleysyvan</td>-->
-                <td>16/10/2018</td>
-                <td><a href="#" class="badge badge-warning">Detalhes</a></td></td>
-              </tr>
-              <tr>
-                <th scope="row">Programação</th>
-                <!--<td>Romerito</td>-->
-                <td>16/10/2018</td>
-                <td><a href="#" class="badge badge-warning">Detalhes</a></td>
-              </tr>
-              <tr>
-                <th scope="row">Redes de Computadores</th>
-                <!--<td>Pedro Iuri</td>-->
-                <td>16/10/2018</td>
-                <td><a href="#" class="badge-warning badge">Detalhes</a></td>
-              </tr>
-            </tbody>
+              @foreach($mural_marcadas as $mural)
+              <tbody>
+                <tr>
+                  <th scope="row">{{$mural->nome_dis}}</th>
+                  <td>{{$mural->nome_prof}}</td>
+                  <td>{{$mural->data}}</td>
+                  <td><a href="#" class="badge badge-info">Detalhes</a></td>
+                </tr>
+                </tbody>
+                @endforeach
           </table>
         </div>
       </div>
@@ -86,80 +66,54 @@
       <div>
       <table class="table">
         <thead>
+
           <tr>
             <th scope="col">Disciplina</th>
-                  <!--<th scope="col">Professor</th>-->
+                  <th scope="col">Professor</th>
               <th scope="col">Data</th>
               <th scope="col">Ação</th>
             </tr>
             </thead>
-              <?php 
-                $dados_disciplina = [
-                      'programacao' => ['34981', 'romerito.campos@ifrn.edu.br', '1047828'],
-                      'quimica' =>  ['34987', 'carlos.chaves@ifrn.edu.br', '1677639'],
-                      'engenharia_software' => ['34980', 'ari.barreto@ifrn.edu.br', '1138756'],
-                      'redes' => ['34985', 'pedro.iuri@ifrn.edu.br', '3273771' ]
-
-                    ];
-              ?>
+              @foreach($mural_pendentes as $mural)
               <tbody>
                 <tr>
-                  <th scope="row">Português</th>
-                  <!--<td>Maria José</td>-->
-                  <td>18/10/2018</td>
+                  <th scope="row">{{$mural->nome_dis}}</th>
+                  <td>{{$mural->nome_prof}}</td>
+                  <td>{{$mural->data}}</td>
                   <td><a href="#" class="badge badge-info">Detalhes</a></td>
                 </tr>
-                <tr>
-                  <th scope="row">Matemática</th>
-                  <!--<td>Joaildo Maia</td>-->
-                  <td>14/09/2018</td>
-                  <td><a href="#" class="badge badge-info">Detalhes</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">História</th>
-                  <!--<td>Kelson Oliveira</td>-->
-                  <td>14/09/2018</td>
-                  <td><a href="#" class="badge badge-info">Detalhes</a></td>
-                </tr>
-              </tbody>
+                </tbody>
+                @endforeach
             </table>              
               <!--<canvas class="embed-responsive-item" id="lineChartDemo"></canvas>-->
           </div>
+          
         </div>
+      
       </div>
       <div class="col-md-6">
         <div class="tile">
           <h3 class="tile-title">Solicitações abertas</h3>
           <div>
             <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Disciplina</th>
-                  <!--<th scope="col">Professor</th>-->
-                  <th scope="col">Data</th>
-                  <th scope="col">Ação</th>
-                </tr>
+              <tr>
+                <th scope="col">Disciplina</th>
+                <th scope="col">Professor</th>
+                <th scope="col">Data</th>
+                <th scope="col">Ação</th>
+              </tr>
               </thead>
+              @foreach($mural_abertas as $mural)
               <tbody>
                 <tr>
-                  <th scope="row">Português</th>
-                  <!--<td>Maria José</td>-->
-                  <td>12/08/2018</td>
-                  <td><a href="#" class="badge badge-dark">Detalhes</a></td>
+                  <th scope="row">{{$mural->nome_dis}}</th>
+                  <td>{{$mural->nome_prof}}</td>
+                  <td>{{$mural->data}}</td>
+                  <td><a href="#" class="badge badge-info">Detalhes</a></td>
                 </tr>
-                <tr>
-                  <th scope="row">Matemática</th>
-                  <!--<td>Joaildo Maia</td>-->
-                  <td>14/09/2018</td>
-                  <td><a href="#" class="badge badge-dark">Detalhes</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">História</th>
-                  <!--<td>Kelson Oliveira</td>-->
-                  <td>14/09/2018</td>
-                  <td><a href="#" class="badge badge-dark">Detalhes</a></td>
-                </tr>
-              </tbody>
+                </tbody>
+                @endforeach
+                
             </table>              
             <!--<canvas class="embed-responsive-item" id="lineChartDemo"></canvas>-->
           </div>

@@ -77,7 +77,7 @@
       <ul class="app-menu">
         <li><a class="app-menu__item" href="{{route('index2')}}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Inicio</span></a></li>
         
-        <li><a class="app-menu__item" href="{{route('mural')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Mural</span></a></li>
+        <li><a class="app-menu__item" href="{{route('mural.index')}}"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Mural</span></a></li>
 
         <li><a class="app-menu__item text-danger" href="{{route('sessao.detroy')}}"><i class="app-menu__icon fa fa-sign-out fa-lg"></i><span class="app-menu__label">Sair</span></a></li>
 

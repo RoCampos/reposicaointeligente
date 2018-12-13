@@ -12,6 +12,7 @@ class SessaoController extends Controller
 {
    	public function Index(){
    		Session::flush();
+        
         return view('telas.page-login');
 
    	}

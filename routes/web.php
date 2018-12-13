@@ -59,7 +59,7 @@ Route::get('/mural', function () {
 
 Route::get('/login', function () {
 	if (Session::has('senha') and Session::has("matricula")){
-		return view('telas.page-login');
+		return view('telas.index2');
 	}
 	else{
 		return view("telas.page-login");
@@ -133,4 +133,5 @@ Route::resource('reposicao', 'AlunoController',[
 
 Route::post('autenticacao', 'AutenticacaoController@index')->name('autenticacao.logar');
 Route::get('sessao', 'sessaoController@index')->name('sessao.detroy');
+Route::get('mural', 'MuralController@index')->name('mural.index');
 /*Route::post('aut', 'AutenticacaoController@destroy')->name('autenticacao.detroy');*/

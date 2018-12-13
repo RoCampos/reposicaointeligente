@@ -5,6 +5,8 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+use GuzzleHttp\Exception\ClientException;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -46,6 +48,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+
+        if ($exception instanceof ClientException) {
+            return response()->view('telas.page-login');
+        }
+
+
         return parent::render($request, $exception);
     }
 }

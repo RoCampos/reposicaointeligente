@@ -12,10 +12,14 @@
         <div class="form-group">
           <label for="exampleFormControlSelect1">Disciplina</label>
           <select class="form-control" id="exampleFormControlSelect1" name="disciplina">
-            <option value="34981">Programação para internet</option>
-            <option value="34987">Química</option>
-            <option value="34980">Engenharia de software</option>
-            <option value="34985">Fundamentos de sistemas operacionais</option>
+            
+            <?php 
+            $n_disciplinas = Session::get('n_disciplinas');
+            $disciplinas = Session::get('disciplinas'); ?>
+            @for ($i = 0; $i < $n_disciplinas; $i++) 
+                <option value=<?php echo ($disciplinas[$i]["id"]); ?>> <?php echo($disciplinas[$i]["descricao"]); ?> </option>
+            @endfor
+           
           </select>
         </div>
           <div class="form-group">
