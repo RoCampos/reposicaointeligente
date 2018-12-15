@@ -37,7 +37,7 @@ Route::get('/index', function () {
 })->name('index2');
 
 Route::get('/index-prof', function () {
-	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
+	if (Session::has('senha_prof') and Session::has("matricula_prof")){
 		return view('telas.index_prof');
 	}
 	else{

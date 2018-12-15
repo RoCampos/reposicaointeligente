@@ -43,7 +43,7 @@ class AutenticacaoController extends Controller
 				Session::put('matricula_prof', $matricula);
 
 				$result = $client->get("/minhas-informacoes/meus-dados/");
-				
+					
 				return view('telas.index_prof');
 
 				
