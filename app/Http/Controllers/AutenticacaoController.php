@@ -44,7 +44,7 @@ class AutenticacaoController extends Controller
 
 				$result = $client->get("/minhas-informacoes/meus-dados/");
 					
-				return view('telas.index_prof');
+				return redirect()->route('prof.inicio');
 
 				
 

@@ -123,6 +123,13 @@ Route::resource('reposicao', 'AlunoController',[
 		'store' => 'reposicao.salvar',
 	]
 ]);
+
+Route::resource('prof', 'ProfessorController',[ 
+	'names' => [
+		'index' => 'prof.inicio',
+		'store' => 'prof.salvar',
+	]
+]);
 // Route::resource('autenticacao', 'AutenticacaoController',[ 
 // 	'names' => [
 // 		'index' => 'autenticacao.logar',
