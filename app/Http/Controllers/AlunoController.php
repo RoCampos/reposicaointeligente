@@ -86,6 +86,7 @@ class AlunoController extends Controller
 
 		$reposicao->situacao = 'Pendente';
 		$reposicao->observacao = null;
+		$reposicao->nome_aluno = $meusDados['nome_usual'];
 
 
 			// from Model

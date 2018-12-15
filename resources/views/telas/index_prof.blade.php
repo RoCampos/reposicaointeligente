@@ -94,7 +94,7 @@
                   <div class="card-header" id="headingTwo" >
                     <h5 class="mb-0">
                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Pablo Vespúcio
+                        {{$mural->nome_aluno}}
                       </button>
                     </h5>
                   </div>
