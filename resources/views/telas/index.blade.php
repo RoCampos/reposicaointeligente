@@ -69,7 +69,7 @@
           ?></p>
           <p class="app-sidebar__user-designation">
           <?php 
-                echo(Session::get('matricula'));
+                echo(Session::get('matricula_aluno'));
             
           ?></p>
         </div>

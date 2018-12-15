@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/aluno', function () {
-	if (Session::has('senha') and Session::has("matricula")){
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
 		return view('aluno.index');
 	}
 	else{
@@ -27,7 +27,7 @@ Route::get('/aluno', function () {
 });
 
 Route::get('/index', function () {
-	if (Session::has('senha') and Session::has("matricula")){
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
 		return view('telas.index2');
 	}
 	else{
@@ -37,7 +37,7 @@ Route::get('/index', function () {
 })->name('index2');
 
 Route::get('/index-prof', function () {
-	if (Session::has('senha') and Session::has("matricula")){
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
 		return view('telas.index_prof');
 	}
 	else{
@@ -48,7 +48,7 @@ Route::get('/index-prof', function () {
 
 
 Route::get('/mural', function () {
-	if (Session::has('senha') and Session::has("matricula")){
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
 		return view('telas.mural');
 	}
 	else{
@@ -58,7 +58,7 @@ Route::get('/mural', function () {
 })->name('mural');
 
 Route::get('/login', function () {
-	if (Session::has('senha') and Session::has("matricula")){
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
 		return view('telas.index2');
 	}
 	else{
@@ -68,7 +68,7 @@ Route::get('/login', function () {
 })->name('page-login');
 
 Route::get('/repo-feitas', function () {
-	if (Session::has('senha') and Session::has("matricula")){
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
 		return view('telas.repo-feitas');
 	}
 	else{
@@ -78,7 +78,7 @@ Route::get('/repo-feitas', function () {
 })->name('repo-feitas');
 
 Route::get('/repo-marcadas', function () {
-	if (Session::has('senha') and Session::has("matricula")){
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
 		return view('telas.repo-marcadas');
 	}
 	else{
@@ -88,7 +88,7 @@ Route::get('/repo-marcadas', function () {
 })->name('repo-marcadas');
 
 Route::get('/repo-pendentes', function () {
-	if (Session::has('senha') and Session::has("matricula")){
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
 		return view('telas.repo-pendentes');
 	}
 	else{
@@ -98,7 +98,7 @@ Route::get('/repo-pendentes', function () {
 })->name('repo-pendentes');
 
 Route::get('/repo-abertas', function () {
-	if (Session::has('senha') and Session::has("matricula")){
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
 		return view('telas.repo-abertas');
 	}
 	else{
@@ -108,7 +108,7 @@ Route::get('/repo-abertas', function () {
 })->name('repo-abertas');
 
 Route::get('/index-prof', function () {
-	if (Session::has('senha') and Session::has("matricula")){
+	if (Session::has('senha_prof') and Session::has("matricula_prof")){
 		return view('telas.index_prof');
 	}
 	else{
@@ -121,7 +121,6 @@ Route::resource('reposicao', 'AlunoController',[
 	'names' => [
 		'index' => 'reposicao.inicio',
 		'store' => 'reposicao.salvar',
-
 	]
 ]);
 // Route::resource('autenticacao', 'AutenticacaoController',[ 
@@ -133,5 +132,5 @@ Route::resource('reposicao', 'AlunoController',[
 
 Route::post('autenticacao', 'AutenticacaoController@index')->name('autenticacao.logar');
 Route::get('sessao', 'sessaoController@index')->name('sessao.detroy');
-Route::get('mural', 'MuralController@index')->name('mural.index');
+Route::get('mural', 'MuralController@index')->name("mural.index");
 /*Route::post('aut', 'AutenticacaoController@destroy')->name('autenticacao.detroy');*/

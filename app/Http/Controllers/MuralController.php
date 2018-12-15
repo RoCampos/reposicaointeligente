@@ -13,7 +13,7 @@ class MuralController extends Controller
 {
     public function Index(){
    		
-   		$matricula = Session::get("matricula");
+   		$matricula = Session::get("matricula_aluno");
         $mural = new Mural();
 		$mural_p = DB::table("reposicaos")
 		    ->where([ ['id_aluno', '=', $matricula], ['situacao', '=', 'Pendente'], ])

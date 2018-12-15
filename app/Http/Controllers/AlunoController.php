@@ -49,8 +49,8 @@ class AlunoController extends Controller
 		}*/
 
 		$suap = new Suap;
-		$matricula = Session::get("matricula");
-		$senha = Session::get("senha");
+		$matricula = Session::get("matricula_aluno");
+		$senha = Session::get("senha_aluno");
 
 		$token_aluno = $suap->autenticar($matricula, $senha);
 		$meusDados = $suap->getMeusDados();
