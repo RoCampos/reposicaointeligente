@@ -3,19 +3,23 @@
 <div class="row">
   <div class="col-md-8 offset-md-2">
     <div class="tile">
-      <form>
+      <form action="{{route('reposicao.salvar')}}"  method="post">
+        {{csrf_field()}}
         <div>
           <h3 >Solicitar Reposição</h3>
         </div>
         <br>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Disciplina</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option value="portugues">Português</option>
-            <option value="mat">Matemática</option>
-            <option value="hist">História</option>
-            <option value="bdd">Banco de Dados</option>
-            <option value="prog_internet">Programação para internet</option>
+          <select class="form-control" id="exampleFormControlSelect1" name="disciplina">
+            
+            <?php 
+            $n_disciplinas = Session::get('n_disciplinas');
+            $disciplinas = Session::get('disciplinas'); ?>
+            @for ($i = 0; $i < $n_disciplinas; $i++) 
+                <option value=<?php echo ($disciplinas[$i]["id"]); ?>> <?php echo($disciplinas[$i]["descricao"]); ?> </option>
+            @endfor
+           
           </select>
         </div>
           <div class="form-group">
@@ -29,7 +33,7 @@
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Motivo</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea name='justificativa' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           <label for="exampleFormControlTextarea1">Anexar documento comprovante</label>
           <div class="input-group mb-3">

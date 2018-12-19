@@ -17,33 +17,127 @@ Route::get('/', function () {
 
 
 Route::get('/aluno', function () {
-return view('aluno.index');
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
+		return view('aluno.index');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 });
 
 Route::get('/index', function () {
-	return view('telas.index2');
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
+		return view('telas.index2');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 })->name('index2');
 
+Route::get('/index-prof', function () {
+	if (Session::has('senha_prof') and Session::has("matricula_prof")){
+		return view('telas.index_prof');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
+})->name('index-prof');
+
+
 Route::get('/mural', function () {
-	return view('telas.mural');
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
+		return view('telas.mural');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 })->name('mural');
 
 Route::get('/login', function () {
-	return view('telas.page-login');
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
+		return view('telas.index2');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 })->name('page-login');
 
 Route::get('/repo-feitas', function () {
-	return view('telas.repo-feitas');
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
+		return view('telas.repo-feitas');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 })->name('repo-feitas');
 
 Route::get('/repo-marcadas', function () {
-	return view('telas.repo-marcadas');
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
+		return view('telas.repo-marcadas');
+	}
+	else{
+		return view("telas.page-login");
+	}
+
 })->name('repo-marcadas');
 
 Route::get('/repo-pendentes', function () {
-	return view('telas.repo-pendentes');
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
+		return view('telas.repo-pendentes');
+	}
+	else{
+		return view("telas.page-login");
+	}
+
 })->name('repo-pendentes');
 
 Route::get('/repo-abertas', function () {
-	return view('telas.repo-abertas');
+	if (Session::has('senha_aluno') and Session::has("matricula_aluno")){
+		return view('telas.repo-abertas');
+	}
+	else{
+		return view("telas.page-login");
+	}
+	
 })->name('repo-abertas');
+
+Route::get('/index-prof', function () {
+	if (Session::has('senha_prof') and Session::has("matricula_prof")){
+		return view('telas.index_prof');
+	}
+	else{
+		return view("telas.page-login");
+	}
+
+})->name('index-prof');
+
+Route::resource('reposicao', 'AlunoController',[ 
+	'names' => [
+		'index' => 'reposicao.inicio',
+		'store' => 'reposicao.salvar',
+	]
+]);
+
+Route::resource('prof', 'ProfessorController',[ 
+	'names' => [
+		'index' => 'prof.inicio',
+		'store' => 'prof.salvar',
+	]
+]);
+// Route::resource('autenticacao', 'AutenticacaoController',[ 
+// 	'names' => [
+// 		'index' => 'autenticacao.logar',
+		
+// 	]
+// ]);
+
+Route::post('autenticacao', 'AutenticacaoController@index')->name('autenticacao.logar');
+Route::get('sessao', 'sessaoController@index')->name('sessao.detroy');
+Route::get('mural', 'MuralController@index')->name("mural.index");
+/*Route::post('aut', 'AutenticacaoController@destroy')->name('autenticacao.detroy');*/

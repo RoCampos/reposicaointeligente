@@ -1,5 +1,5 @@
 <?php
-require dirname(__DIR__).'\Projeto_SSAA\vendor\autoload.php';
+require dirname(__DIR__).'\reposicaointeligente\vendor\autoload.php';
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 use Ivmelo\SUAP\SUAP;
 date_default_timezone_set('America/Fortaleza');
@@ -15,9 +15,9 @@ date_default_timezone_set('America/Fortaleza');
  */
 
 
-$client = new SUAP(matricula_aqui, senha_aqui);
+$client = new SUAP('20151104010800', 'Edilene@2019');
 
-$token= $client->autenticar(matricula_aqui, senha_aqui);
+$token= $client->autenticar('20151104010800', 'Edilene@2019');
 //print($token['token']);
 
 

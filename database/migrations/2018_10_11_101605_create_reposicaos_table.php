@@ -24,6 +24,7 @@ class CreateReposicaosTable extends Migration
             $table->string('hora')->nullable();
             $table->string('situacao');
             $table->string('observacao')->nullable();
+            $table->string('email');
             $table->timestamps();
         });
     }
